@@ -24,8 +24,8 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           // if we're in development mode, use style-loader. For production build use MiniCssExtractPlugin.loader
-          'style-loader',
-          //   MiniCssExtractPlugin.loader,
+          //   'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
         ],
@@ -35,5 +35,14 @@ module.exports = {
         type: 'asset/resource',
       },
     ],
+  },
+  devServer: {
+    open: true,
+    hot: true,
+    port: 'auto',
+    static: {
+      directory: './src',
+      watch: true,
+    },
   },
 };

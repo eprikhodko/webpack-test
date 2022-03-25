@@ -17,6 +17,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
+      {
         test: /\.(sa|sc|c)ss$/,
         use: [
           // if we're in development mode, use style-loader. For production build use MiniCssExtractPlugin.loader
